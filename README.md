@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,7 +40,6 @@
 <body>
     <div class="container">
         <header>
-            <h1>Aleron Francois</h1>
             <p><strong>Email:</strong> aleron.francois@gmail.com</p>
             <p><strong>GitHub:</strong> github.com/AleronFrancois</p>
         </header>
