@@ -49,27 +49,48 @@ h1 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    color: #00ff00;
+    color: #09ff00;
+}
+
+.prompt-area p {
+    color: #8a9dff; /* Set the color for the prompt area text */
 }
 
 #prompt {
-    margin: 0;
-    font-size: 1.2em;
-    display: flex;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: #8a9dff; /* Match the color of the prompt to the prompt area text */
+    white-space: nowrap; /* Prevent wrapping */
+    font-size: 1.2em; /* Ensure same font size */
+    line-height: 1.2em; /* Ensure same line height */
+    margin-right: 10px; /* Add some space between prompt and input */
 }
 
 #user-input-placeholder {
-    color: #8a9dff;
-    min-width: 200px;
-    word-wrap: normal;
+    position: absolute;
+    top: 0;
+    left: 50px; /* Adjust left position to align with $ symbol */
+    z-index: 3;
+    color: #8a9dff; /* Color for the user input */
+    white-space: nowrap; /* Prevent wrapping */
+    font-size: 1.2em; /* Ensure same font size */
+    line-height: 1.2em; /* Ensure same line height */
+    background: transparent; /* Ensure background is transparent */
+    flex-grow: 1; /* Allow the input to take up remaining space */
 }
 
 #command-to-type {
-    display: inline;
-    font-size: 1.2em;
-    white-space: nowrap;
-    color: #4ecdc4;
+    position: absolute;
+    top: 0;
+    left: 50px; /* Adjust left position to align with $ symbol */
+    z-index: 2;
+    color: #8a9dff; /* Color for the command to type */
+    white-space: nowrap; /* Prevent wrapping */
+    font-size: 1.2em; /* Ensure same font size */
+    line-height: 1.2em; /* Ensure same line height */
+    margin-right: 10px; /* Add some space between command and input */
 }
 
 .status {
@@ -106,4 +127,12 @@ h1 {
 #restart-button:focus {
     outline: none; /* Removes default focus outline */
     box-shadow: 0 0 5px #8a9dff; /* Green focus shadow */
+}
+
+.input-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    width: 100%;
+    position: relative; /* Ensure relative positioning */
+    padding-left: 50px; /* Adjust padding to align with $ symbol */
 }
