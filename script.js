@@ -85,19 +85,19 @@ document.addEventListener("keydown", function(event) {
     // Spacebar enters a space (normal behavior)
     if (keyPressed === " ") {
         userInput += " ";
-        document.getElementById("user-input-placeholder").textContent = userInput;
         event.preventDefault();  // Allow space, but prevent form submission
     } 
     // Allow backspace to delete characters
     else if (keyPressed === "Backspace") {
         userInput = userInput.slice(0, -1);
-        document.getElementById("user-input-placeholder").textContent = userInput;
     }
     // Allow typing of normal characters
     else if (keyPressed.length === 1) {
         userInput += keyPressed;
-        document.getElementById("user-input-placeholder").textContent = userInput;
     }
+
+    // Update the display with the user input and highlight incorrect characters
+    updateDisplay();
 
     // Calculate accuracy
     calculateAccuracy();
@@ -110,6 +110,23 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+// Function to update the display with the user input and highlight incorrect characters
+function updateDisplay() {
+    let displayText = "";
+    for (let i = 0; i < currentCommand.length; i++) {
+        if (i < userInput.length) {
+            if (userInput[i] === currentCommand[i]) {
+                displayText += `<span style="color: white;">${currentCommand[i]}</span>`;
+            } else {
+                displayText += `<span style="color: red;">${currentCommand[i]}</span>`;
+            }
+        } else {
+            displayText += `<span style="color: #8a9dff;">${currentCommand[i]}</span>`;
+        }
+    }
+    document.getElementById("user-input-placeholder").innerHTML = displayText;
+}
+
 // Function to calculate typing accuracy
 function calculateAccuracy() {
     correctChars = 0;
@@ -118,6 +135,14 @@ function calculateAccuracy() {
             correctChars++;
         }
     }
+}
+
+function setNewCommand() {
+    currentCommand = randomCommands[0];  // First command stays constant
+    document.getElementById("command-to-type").textContent = currentCommand;  // Display prompt
+    userInput = "";  // Reset user input
+    document.getElementById("user-input-placeholder").textContent = ""; // Reset display
+    document.getElementById("user-input-placeholder").focus();
 }
 
 // Stop the test and calculate the final results
