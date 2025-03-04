@@ -8,15 +8,14 @@
 </head>
 <body>
     <h1>Kali Linux Command Typing Test</h1>
-    <!-- Move the command prompt above the terminal container -->
-    <div id="command-prompt">
-        <p id="command"></p>
-    </div>
     <div class="terminal">
         <div class="prompt-area">
             <p>┌──(kali㉿kali)-[~]</p>
-            <p id="prompt">└─$ <span id="user-input-placeholder"></p>
-            <p id="command-to-type"><span id="command"></span></p>
+            <div class="input-container">
+                <p id="prompt">└─$</p>
+                <p id="command-to-type"></p>
+                <p id="user-input-placeholder"></p>
+            </div>
         </div>
     </div>
     <div class="status">
