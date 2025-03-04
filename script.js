@@ -147,12 +147,13 @@ function setNewCommand() {
 
 // Stop the test and calculate the final results
 function stopTest() {
-    const timeTaken = 100;
-    const accuracy = ((correctChars / (wordsTyped * currentCommand.length)) * 100).toFixed(2);
-    const speed = Math.round(wordsTyped / (timeTaken / 60));
+    const timeTaken = 100 - timeLeft; // Calculate the time taken
+    const totalChars = currentCommand.length;
+    const accuracy = ((correctChars / totalChars) * 100).toFixed(2);
+    const wordsPerMinute = Math.round((correctChars / 5) / (timeTaken / 60)); // Assuming 5 characters per word
 
     document.getElementById("accuracy").textContent = accuracy + "%";
-    document.getElementById("speed").textContent = speed + " words per minute";
+    document.getElementById("speed").textContent = wordsPerMinute + " words per minute";
     document.getElementById("time-left").textContent = "0";
 
     // Show prompt to restart test
