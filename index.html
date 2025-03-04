@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Command Typing Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Kali Linux Command Typing Test</h1>
+    <!-- Move the command prompt above the terminal container -->
+    <div id="command-prompt">
+        <p id="command"></p>
+    </div>
+    <div class="terminal">
+        <div class="prompt-area">
+            <p>┌──(kali㉿kali)-[~]</p>
+            <p id="prompt">└─$ <span id="user-input-placeholder"></p>
+            <p id="command-to-type"><span id="command"></span></p>
+        </div>
+    </div>
+    <div class="status">
+        <p>Time Left: <span id="time-left">15</span> seconds</p>
+        <p>Speed: <span id="speed">0</span> words per minute</p>
+        <p>Accuracy: <span id="accuracy">100%</span></p>
+    </div>
+    <button id="restart-button" style="display:none;">Start New Test</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
